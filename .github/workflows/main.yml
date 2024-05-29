@@ -36,7 +36,10 @@ jobs:
 
       # Log in to Docker Hub
       - name: Log in to Docker Hub
-        run: docker login -u ${{ secrets.USERNAME }} -p ${{ secrets.TOKEN }}
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.TOKEN }}
 
       # Build image and push backend
       - name: Build image and push backend
