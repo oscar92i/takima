@@ -41,7 +41,7 @@ jobs:
       - name: Build image and push backend
         uses: docker/build-push-action@v3
         with:
-          context: ./backend-api
+          context: ./backend-api/simple-api-student
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tpdevops-backend-api:latest
           push: ${{ github.ref == 'refs/heads/main' }}
 
