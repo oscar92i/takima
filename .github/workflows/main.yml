@@ -51,10 +51,10 @@ build-and-push-docker-image:
 
    - name: Build image and push database
        # DO the same for database
-        uses: docker/build-push-action@v3
-        with:
-          context: ./database
-          tags: ${{secrets.USERNAME}}/tpdevops-database:latest
+     uses: docker/build-push-action@v3
+     with:
+        context: ./database
+        tags: ${{secrets.USERNAME}}/tpdevops-database:latest
 
    - name: Build image and push httpd
      # DO the same for httpd
