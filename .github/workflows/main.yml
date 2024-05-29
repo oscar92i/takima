@@ -26,11 +26,10 @@ jobs:
       - name: Build and test with Maven
         run: mvn clean verify --file backend-api/simple-api-student/pom.xml
 
-# define job to build and publish docker image
  build-and-push-docker-image:
- needs: test-backend
+  needs: test-backend
  # run only when code is compiling and tests are passing
- runs-on: ubuntu-22.04
+  runs-on: ubuntu-22.04
 
  # steps to perform in job
  steps:
