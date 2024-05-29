@@ -58,7 +58,7 @@ build-and-push-docker-image:
 
    - name: Build image and push httpd
      # DO the same for httpd
-        uses: docker/build-push-action@v3
-        with:
-          context: ./frontend-api
-          tags: ${{secrets.USERNAME}}/tpdevops-frontend-api:latest
+     uses: docker/build-push-action@v3
+     with:
+        context: ./frontend-api
+        tags: ${{secrets.USERNAME}}/tpdevops-frontend-api:latest
