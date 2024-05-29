@@ -38,15 +38,15 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.TOKEN }}
 
       # Build image and push backend
       - name: Build image and push backend
         uses: docker/build-push-action@v3
         with:
           context: ./backend-api
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tpdevops-backend-api:latest
+          tags: ${{ secrets.USERNAME }}/tpdevops-backend-api:latest
           push: ${{ github.ref == 'refs/heads/main' }}
 
       # Build image and push database
@@ -54,7 +54,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./database
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tpdevops-database:latest
+          tags: ${{ secrets.USERNAME }}/tpdevops-database:latest
           push: ${{ github.ref == 'refs/heads/main' }}
 
       # Build image and push HTTP server
@@ -62,5 +62,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./frontend-api
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tpdevops-frontend-api:latest
+          tags: ${{ secrets.USERNAME }}/tpdevops-frontend-api:latest
           push: ${{ github.ref == 'refs/heads/main' }}
