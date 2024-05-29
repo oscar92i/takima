@@ -40,15 +40,14 @@ build-and-push-docker-image:
    - name: Login to DockerHub
      run: docker login -u ${{ secrets.USERNAME }} -p ${{ secrets.TOKEN }}
 
-
    - name: Build image and push backend
      uses: docker/build-push-action@v3
      with:
        # relative path to the place where source code with Dockerfile is located
-       context: ./backend-api
+        context: ./backend-api
        # Note: tags has to be all lower-case
-       tags:  ${{secrets.USERNAME}}/tpdevops-backend-api:latest
-       push: ${{ github.ref == 'refs/heads/main' }}
+        tags: ${{secrets.USERNAME}}/tpdevops-backend-api:latest
+        push: ${{ github.ref == 'refs/heads/main' }}
 
    - name: Build image and push database
        # DO the same for database
