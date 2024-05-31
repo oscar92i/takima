@@ -21,7 +21,7 @@ TECHNOLOGIES
 
 installation of Docker Engine on Ubuntu:
 
-'''
+``` 
 #Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install ca-certificates curl
@@ -39,7 +39,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 sudo docker run hello-world
-'''
+``` 
 
 
 docker pull adminer
