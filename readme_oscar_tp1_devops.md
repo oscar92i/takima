@@ -1,5 +1,47 @@
 
 
+
+http://school.pages.takima.io/devops-resources/
+
+Part 1 - Docker sessions
+http://school.pages.takima.io/devops-resources/ch1-discover-docker-tp/
+Part 2 - GitHub Action session
+http://school.pages.takima.io/devops-resources/ch2-discover-github-actions-tp/
+Part 3 - Ansible session
+http://school.pages.takima.io/devops-resources/ch3-discover-ansible-tp/
+
+TECHNOLOGIES
+
+
+
+
+
+
+
+
+installation of Docker Engine on Ubuntu:
+
+'''
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+sudo docker run hello-world
+'''
+
+
 docker pull adminer
 
 docker network create app-network
@@ -130,4 +172,13 @@ ANSIBLE
 
 sudo apt install pipx
 pipx install --include-deps ansible
-$ pipx install ansible-core
+pipx install ansible-core
+
+SSH
+
+A this point we need to connect using ssh protocol.
+This can't be done through the EPF VM because it is connected to the EPF WiFi.
+
+So I tried to stop using the EPF VM, but due to the fact that I use an EPF computer, and maybe that I am not an administrator, I couldn't download WSL.
+
+I am not able to end the part 3.
