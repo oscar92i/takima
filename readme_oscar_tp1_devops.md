@@ -102,8 +102,32 @@ Testcontainers:
 Testcontainers is a popular library that provides lightweight, disposable instances of common databases, Selenium web browsers, and other services running in Docker containers. It's widely used for integration testing in Java applications. By using Testcontainers, developers can ensure that their tests run in environments that closely resemble production, improving the reliability and reproducibility of tests
 
 git init
-git add README.md
+git add *all your docs*
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/oscar92i/takima.git
 git push -u origin main
+
+
+For what purpose do we need to push docker images?
+Pushing Docker images is essential for ensuring consistent, portable, scalable, and manageable deployments across different environments. It plays a critical role in modern software development and operations, enabling efficient CI/CD practices, microservices architectures, and cloud-native applications.
+
+
+Repository secrets
+
+
+SonarCloud
+
+Project_key: takima-oscar_takima-devops
+Organization_key: takima-oscar
+
+      # Build and test with Maven
+      - name: Build and test with Maven
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=takima-oscar_takima-devops -Dsonar.organization=takima-oscar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./backend-api/simple-api-student
+
+
+ANSIBLE
+
+sudo apt install pipx
+pipx install --include-deps ansible
+$ pipx install ansible-core
