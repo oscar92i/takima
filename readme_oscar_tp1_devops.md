@@ -91,6 +91,7 @@ ENV POSTGRES_DB=db \
 sudo docker run -d --name my_postgrey_app --network app-network -p 5432:5432 oscar/tp1
 sudo docker run -d --name adminer --network app-network -p 8090:8080 adminer
 ```
+
 We add to the Dockerfile
 ``` 
 COPY ./sql-scripts/* /docker-entrypoint-initdb.d
@@ -180,7 +181,7 @@ We can push our images. One example below.
 sudo docker tag tpdocker-frontend oscarepf/tpdocker-frontend:1.0
 sudo docker push oscarepf/tpdocker-frontend:1.0
 ```
-## TP Part02
+## TP Part 2
 
 Testcontainers:
 Testcontainers is a popular library that provides lightweight, disposable instances of common databases, Selenium web browsers, and other services running in Docker containers. It's widely used for integration testing in Java applications. By using Testcontainers, developers can ensure that their tests run in environments that closely resemble production, improving the reliability and reproducibility of tests
@@ -199,17 +200,20 @@ For what purpose do we need to push docker images?
 Pushing Docker images is essential for ensuring consistent, portable, scalable, and manageable deployments across different environments. It plays a critical role in modern software development and operations, enabling efficient CI/CD practices, microservices architectures, and cloud-native applications.
 
 
-Repository secrets
+GitHub repository secrets are a way to store sensitive information, such as API keys, tokens, passwords, and other confidential data, securely within a GitHub repository. These secrets can be used in GitHub Actions workflows without exposing the sensitive data directly in the workflow files.
+We used them there to stock our docker username and our docker password. Same for sonar token
 
-SonarCloud
+SonarCloud is a cloud-based service for code quality and security analysis. It integrates with your CI/CD pipeline to automatically inspect code quality and detect bugs, code smells, and security vulnerabilities.
 
 Project_key: takima-oscar_takima-devops
 Organization_key: takima-oscar
 
+```
       # Build and test with Maven
       - name: Build and test with Maven
         run: mvn -B verify sonar:sonar -Dsonar.projectKey=takima-oscar_takima-devops -Dsonar.organization=takima-oscar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./backend-api/simple-api-student
-### TP part 3
+```
+## TP part 3
 
 ANSIBLE
 ```
