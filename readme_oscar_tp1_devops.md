@@ -1,5 +1,16 @@
+# Presentation of the project
 
+We are doing a DevOps project, assisted by two employees from takima.
+Create an appropriate file structure, 1 folder per image.
 
+Target application
+3-tiers application:
+- HTTP server
+- Backend API
+- Database
+
+For each of those applications, we will follow the same process: choose the appropriate docker base image, create and configure this image, put our application specifics inside and at some point have it running. Our final goal is to have a 3-tier web API running.
+This have to be CI pipeline which also stocking the images of the project.
 
 http://school.pages.takima.io/devops-resources/
 
@@ -10,9 +21,31 @@ http://school.pages.takima.io/devops-resources/ch2-discover-github-actions-tp/
 Part 3 - Ansible session
 http://school.pages.takima.io/devops-resources/ch3-discover-ansible-tp/
 
-TECHNOLOGIES
+## TECHNOLOGIES
+
+- Docker Engine (images, containers, volume, network, Dockerfile, docker-compose)
+- PostgreSQL
+- Adminer
+- .sql scripts
+- Java (Maven, jdk-17)
+- HTML
+- GitHub
+- Docker Hub
+- GitHub Actions
+- yaml files
+- SonarCloud
+- Ansible
 
 
+### ACCOUNTS
+
+**GitHub**
+username: oscar92i
+https://github.com/oscar92i/takima
+
+**Docker HUB**
+username: oscarepf
+https://hub.docker.com/repositories/oscarepf
 
 
 
